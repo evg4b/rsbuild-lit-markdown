@@ -1,6 +1,6 @@
 import { defineConfig } from '@rsbuild/core';
-import { pluginExample } from '../src';
+import { litMarkdown } from '../src';
 
 export default defineConfig({
-  plugins: [pluginExample()],
+  plugins: [litMarkdown()],
 });

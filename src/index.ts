@@ -1,16 +1,36 @@
-import type { RsbuildPlugin } from '@rsbuild/core';
+import type { RsbuildPlugin, RsbuildPluginAPI } from '@rsbuild/core';
+import type { html } from 'lit';
+import { type MarkedExtension, type MarkedOptions, marked } from 'marked';
 
-export type PluginExampleOptions = {
-  foo?: string;
-  bar?: boolean;
-};
+export type LitMarkdownFile = ReturnType<typeof html>;
 
-export const pluginExample = (
-  options: PluginExampleOptions = {},
+export interface LitMarkdownOptions extends MarkedOptions {
+  selector?: RegExp;
+  use?: MarkedExtension[];
+}
+
+export const litMarkdown = (
+  options: LitMarkdownOptions = {},
 ): RsbuildPlugin => ({
-  name: 'plugin-example',
+  name: 'plugin-lit-markdown',
+  setup(api: RsbuildPluginAPI) {
+    Array.from(options.use || []).forEach((extension) => {
+      marked.use(extension);
+      api.logger.debug('Loaded extension', extension);
+    });
 
-  setup() {
-    console.log('Hello Rsbuild!', options);
+    api.transform(
+      { test: options.selector ?? /\.md?lit$/, order: 'pre' },
+      async (context) => {
+        api.logger.debug('transforming', context.resource);
+
+        const html = await marked(context.code, options);
+        const encoded = html.replace('`', '\\`');
+
+        api.logger.debug('transforming', context.resource);
+
+        return `import { html } from "lit"; export default html\`${encoded}\`;`;
+      },
+    );
   },
 });

@@ -248,6 +248,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lit-labs/ssr-dom-shim@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@lit-labs/ssr-dom-shim@npm:1.5.0"
+  checksum: 10c0/811f6c7a13f9ac4dbf2509da7c6b3c44e423daa1be97d5794b2c601bd38bbc544a2c4016c265fa08066a675c6f453839f9ffe72029ac8c813542680f34310051
+  languageName: node
+  linkType: hard
+
+"@lit/reactive-element@npm:^2.1.0":
+  version: 2.1.2
+  resolution: "@lit/reactive-element@npm:2.1.2"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.5.0"
+  checksum: 10c0/557069ce6ebbbafb1140e1e0a25ce73d3501bf455cda231d42bb131baa9065c54b6b7ca1655507eede397decd7ddde16c84192cb72a07d4edf41d54e07725933
+  languageName: node
+  linkType: hard
+
 "@module-federation/error-codes@npm:0.21.6":
   version: 0.21.6
   resolution: "@module-federation/error-codes@npm:0.21.6"
@@ -685,6 +701,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/trusted-types@npm:^2.0.2":
+  version: 2.0.7
+  resolution: "@types/trusted-types@npm:2.0.7"
+  checksum: 10c0/4c4855f10de7c6c135e0d32ce462419d8abbbc33713b31d294596c0cc34ae1fa6112a2f9da729c8f7a20707782b0d69da3b1f8df6645b0366d08825ca1522e0c
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^4.0.0":
   version: 4.0.0
   resolution: "abbrev@npm:4.0.0"
@@ -764,6 +787,18 @@ __metadata:
   version: 2.0.3
   resolution: "err-code@npm:2.0.3"
   checksum: 10c0/b642f7b4dd4a376e954947550a3065a9ece6733ab8e51ad80db727aaae0817c2e99b02a97a3d6cecc648a97848305e728289cf312d09af395403a90c9d4d8a66
+  languageName: node
+  linkType: hard
+
+"es-toolkit@npm:^1.43.0":
+  version: 1.43.0
+  resolution: "es-toolkit@npm:1.43.0"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: 10c0/bbff0b591fd01be9f37a34dad7964b590e4952fc594c1230140771687f05136caa6ab21962a6e9cde7c4b529a149171ed5179d6379d4a8e656dbf7e8d126999c
   languageName: node
   linkType: hard
 
@@ -898,6 +933,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lit-element@npm:^4.2.0":
+  version: 4.2.2
+  resolution: "lit-element@npm:4.2.2"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.5.0"
+    "@lit/reactive-element": "npm:^2.1.0"
+    lit-html: "npm:^3.3.0"
+  checksum: 10c0/114ab5837f1f9e03a30b1ed1c055fa0e31f01e444464e5ab0453ef88be12d778508235533267c42614d323e3048ee58f865b5c612948a53bd6219abca404c710
+  languageName: node
+  linkType: hard
+
+"lit-html@npm:^3.3.0":
+  version: 3.3.2
+  resolution: "lit-html@npm:3.3.2"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.2"
+  checksum: 10c0/0a6763875acd03dfc5d4483ea74ca4bfe5d71a90b05bfc484e8201721c8603db982760fd27566a69a834f21d34437f7c390e21cd4c6bff149ca7e3a46d3b217a
+  languageName: node
+  linkType: hard
+
+"lit@npm:~3.3.2":
+  version: 3.3.2
+  resolution: "lit@npm:3.3.2"
+  dependencies:
+    "@lit/reactive-element": "npm:^2.1.0"
+    lit-element: "npm:^4.2.0"
+    lit-html: "npm:^3.3.0"
+  checksum: 10c0/50563fd9c7bf546f8fdc6a936321b5be581ce440a359b06048ae5d44c1ecf6c38c2ded708e97d36a1ce70da1a7ad569890e40e0fb5ed040ec42d5ed2365f468d
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^11.0.0, lru-cache@npm:^11.1.0, lru-cache@npm:^11.2.1":
   version: 11.2.4
   resolution: "lru-cache@npm:11.2.4"
@@ -921,6 +987,15 @@ __metadata:
     promise-retry: "npm:^2.0.1"
     ssri: "npm:^13.0.0"
   checksum: 10c0/525f74915660be60b616bcbd267c4a5b59481b073ba125e45c9c3a041bb1a47a2bd0ae79d028eb6f5f95bf9851a4158423f5068539c3093621abb64027e8e461
+  languageName: node
+  linkType: hard
+
+"marked@npm:~17.0.1":
+  version: 17.0.1
+  resolution: "marked@npm:17.0.1"
+  bin:
+    marked: bin/marked.js
+  checksum: 10c0/0197337aad33882308cea52d2c86d7b830a89be729a4010a26a488ae1c224cdc7520b8cce056832a81a127fc39a3827f45e3865c1ff257324cb553cb06ce0e57
   languageName: node
   linkType: hard
 
@@ -1126,6 +1201,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rsbuild-lit-markdown@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "rsbuild-lit-markdown@workspace:."
+  dependencies:
+    "@biomejs/biome": "npm:^2.3.8"
+    "@playwright/test": "npm:^1.57.0"
+    "@rsbuild/core": "npm:^1.6.10"
+    "@rslib/core": "npm:^0.18.2"
+    "@types/node": "npm:^24.10.1"
+    es-toolkit: "npm:^1.43.0"
+    lit: "npm:~3.3.2"
+    marked: "npm:~17.0.1"
+    playwright: "npm:^1.57.0"
+    simple-git-hooks: "npm:^2.13.1"
+    typescript: "npm:^5.9.3"
+  peerDependencies:
+    "@rsbuild/core": 1.x
+    lit: ~3.3.2
+    marked: ~17.0.1
+  peerDependenciesMeta:
+    "@rsbuild/core":
+      optional: true
+  languageName: unknown
+  linkType: soft
+
 "rsbuild-plugin-dts@npm:0.18.6":
   version: 0.18.6
   resolution: "rsbuild-plugin-dts@npm:0.18.6"
@@ -1146,26 +1246,6 @@ __metadata:
   checksum: 10c0/4620e3042cfae4d6b87deb5e5a705719eae9bf1b830e0285251a4bf761398d1d91270ae2aa0df60f9eddf6624e4bef9e32d9438f23461d30985d4eb11aa0a6d4
   languageName: node
   linkType: hard
-
-"rsbuild-plugin-example@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "rsbuild-plugin-example@workspace:."
-  dependencies:
-    "@biomejs/biome": "npm:^2.3.8"
-    "@playwright/test": "npm:^1.57.0"
-    "@rsbuild/core": "npm:^1.6.10"
-    "@rslib/core": "npm:^0.18.2"
-    "@types/node": "npm:^24.10.1"
-    playwright: "npm:^1.57.0"
-    simple-git-hooks: "npm:^2.13.1"
-    typescript: "npm:^5.9.3"
-  peerDependencies:
-    "@rsbuild/core": 1.x
-  peerDependenciesMeta:
-    "@rsbuild/core":
-      optional: true
-  languageName: unknown
-  linkType: soft
 
 "safer-buffer@npm:>= 2.1.2 < 3.0.0":
   version: 2.1.2
