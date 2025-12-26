@@ -13,3 +13,11 @@ test-results
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
