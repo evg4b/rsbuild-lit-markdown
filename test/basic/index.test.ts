@@ -12,33 +12,27 @@ test('should render page as expected', async ({ page }) => {
     cwd: __dirname,
     rsbuildConfig: {
       plugins: [litMarkdown()],
-      server: {
-        port: getRandomPort(),
-      },
+      server: { port: getRandomPort() },
     },
   });
 
   const { server, urls } = await rsbuild.startDevServer();
 
   await page.goto(urls[0]);
-  expect(await page.evaluate('window.test')).toBe(1);
 
-  await server.close();
-});
+  const getSelector = (selector: string) =>
+    page.evaluate((selector) => {
+      const el = document.querySelector('my-element');
+      return el?.shadowRoot?.querySelector(selector)?.textContent?.trim();
+    }, selector);
 
-test('should build succeed', async ({ page }) => {
-  const rsbuild = await createRsbuild({
-    cwd: __dirname,
-    rsbuildConfig: {
-      plugins: [litMarkdown()],
-    },
-  });
+  const h1 = await getSelector('h1');
+  const p = await getSelector('p');
+  const pre = await getSelector('pre');
 
-  await rsbuild.build();
-  const { server, urls } = await rsbuild.preview();
-
-  await page.goto(urls[0]);
-  expect(await page.evaluate('window.test')).toBe(1);
+  expect(h1).toBe('Hello Markdown!');
+  expect(p).toBe('Hello World!');
+  expect(pre).toBe("console.log('Hello TypeScript!');");
 
   await server.close();
 });

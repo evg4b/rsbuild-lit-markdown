@@ -4,9 +4,9 @@ import { type MarkedExtension, type MarkedOptions, marked } from 'marked';
 
 export type LitMarkdownFile = ReturnType<typeof html>;
 
-export interface LitMarkdownOptions extends MarkedOptions {
+export interface LitMarkdownOptions extends Omit<MarkedOptions, 'extensions'> {
   selector?: RegExp;
-  use?: MarkedExtension[];
+  extensions?: MarkedExtension[];
 }
 
 export const litMarkdown = (
@@ -14,17 +14,12 @@ export const litMarkdown = (
 ): RsbuildPlugin => ({
   name: 'plugin-lit-markdown',
   setup(api: RsbuildPluginAPI) {
-    Array.from(options.use || []).forEach((extension) => {
-      marked.use(extension);
-      api.logger.debug('Loaded extension', extension);
-    });
-
     api.transform(
-      { test: options.selector ?? /\.md?lit$/, order: 'pre' },
+      { test: options.selector ?? /\.md$/, order: 'pre' },
       async (context) => {
         api.logger.debug('transforming', context.resource);
 
-        const html = await marked(context.code, options);
+        const html = await marked(context.code, options as MarkedOptions);
         const encoded = html.replace('`', '\\`');
 
         api.logger.debug('transforming', context.resource);

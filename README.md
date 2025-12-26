@@ -35,19 +35,18 @@
 3. Add types declaration to your `types.d.ts`:
 
     ```ts
-    declare module '*.md?lit' {
+    declare module '*.md' {
       import type { LitMarkdownFile } from 'rsbuild-lit-markdown';
-      const file: LitMarkdownFile;
-      export default file;
+      export default LitMarkdownFile;
     }
     ```
 
-4.  Import your markdown files with `.md?lit` extension:
+4.  Import your markdown files:
 
     ```ts
     import { LitElement, html } from 'lit';
     import { customElement } from 'lit/decorators.js';
-    import readme from './README.md?lit';
+    import readme from './README.md';
 
     @customElement('example-readme')
     export class ReadmeElement extends LitElement {
