@@ -30,10 +30,10 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24.11.1
-          cache: "pnpm"
+          cache: "yarn"
 
       - name: Install Dependencies
-        run: pnpm install
+        run: yarn install
 
       - name: Run Lint
-        run: pnpm run lint
+        run: yarn run lint

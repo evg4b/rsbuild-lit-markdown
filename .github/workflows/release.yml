@@ -28,7 +28,7 @@ jobs:
           node-version: 24.11.1
 
       # Update npm to the latest version to enable OIDC
-      # Use corepack to install pnpm
+      # Use corepack to install yarn
       - name: Setup Package Managers
         run: |
           npm install -g npm@latest
@@ -37,7 +37,7 @@ jobs:
           corepack enable
 
       - name: Install Dependencies
-        run: pnpm install
+        run: yarn install
 
       - name: Publish
         uses: JS-DevTools/npm-publish@v3
