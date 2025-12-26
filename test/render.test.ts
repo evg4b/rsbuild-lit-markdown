@@ -2,8 +2,8 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { expect, test } from '@playwright/test';
 import { createRsbuild } from '@rsbuild/core';
-import { litMarkdown } from '../../src';
-import { getRandomPort } from '../helper';
+import { litMarkdown } from '../src';
+import { getRandomPort } from './helper';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

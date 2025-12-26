@@ -14,12 +14,19 @@ export const litMarkdown = (
 ): RsbuildPlugin => ({
   name: 'plugin-lit-markdown',
   setup(api: RsbuildPluginAPI) {
+    const { extensions, selector, ...markedOptions } = options;
+
+    for (const extension of extensions ?? []) {
+      api.logger.debug('registering extension', extension);
+      marked.use(extension);
+    }
+
     api.transform(
-      { test: options.selector ?? /\.md$/, order: 'pre' },
+      { test: selector ?? /\.md$/, order: 'pre' },
       async (context) => {
         api.logger.debug('transforming', context.resource);
 
-        const html = await marked(context.code, options as MarkedOptions);
+        const html = await marked(context.code, markedOptions);
         const encoded = html.replace('`', '\\`');
 
         api.logger.debug('transforming', context.resource);
