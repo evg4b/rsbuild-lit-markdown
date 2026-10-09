@@ -224,9 +224,9 @@ __metadata:
   linkType: hard
 
 "@lit-labs/ssr-dom-shim@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@lit-labs/ssr-dom-shim@npm:1.5.0"
-  checksum: 10c0/811f6c7a13f9ac4dbf2509da7c6b3c44e423daa1be97d5794b2c601bd38bbc544a2c4016c265fa08066a675c6f453839f9ffe72029ac8c813542680f34310051
+  version: 1.6.0
+  resolution: "@lit-labs/ssr-dom-shim@npm:1.6.0"
+  checksum: 10c0/deffcfd765d268820beef600a1c1cf9d3cf1a5cb4bbe7e80843796ff33d1a122f4e5651ef4a44b33d36e5fa6538e6ee87a95b9d40b4a26cabf3c35b45194c87a
   languageName: node
   linkType: hard
 
@@ -262,7 +262,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rsbuild/core@npm:^2.2.12, @rsbuild/core@npm:~2.2.11":
+"@rsbuild/core@npm:~2.2.11, @rsbuild/core@npm:~2.2.12":
   version: 2.2.12
   resolution: "@rsbuild/core@npm:2.2.12"
   dependencies:
@@ -279,7 +279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rslib/core@npm:^1.0.3":
+"@rslib/core@npm:~1.0.3":
   version: 1.0.3
   resolution: "@rslib/core@npm:1.0.3"
   dependencies:
@@ -522,11 +522,11 @@ __metadata:
   linkType: hard
 
 "lit-html@npm:^3.3.0":
-  version: 3.3.2
-  resolution: "lit-html@npm:3.3.2"
+  version: 3.3.3
+  resolution: "lit-html@npm:3.3.3"
   dependencies:
     "@types/trusted-types": "npm:^2.0.2"
-  checksum: 10c0/0a6763875acd03dfc5d4483ea74ca4bfe5d71a90b05bfc484e8201721c8603db982760fd27566a69a834f21d34437f7c390e21cd4c6bff149ca7e3a46d3b217a
+  checksum: 10c0/84e57314412ff385cc67fc482d26b77057370e2cfe3c6495cc45f692bdad840d5ed0519ddddcfae1d043bb098c66daa7e807593d5a21ac72094da14274497879
   languageName: node
   linkType: hard
 
@@ -541,7 +541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked-gfm-heading-id@npm:^4.1.4":
+"marked-gfm-heading-id@npm:~4.1.4":
   version: 4.1.4
   resolution: "marked-gfm-heading-id@npm:4.1.4"
   dependencies:
@@ -587,19 +587,20 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^2.5.15"
     "@playwright/test": "npm:^1.64.0"
-    "@rsbuild/core": "npm:^2.2.12"
-    "@rslib/core": "npm:^1.0.3"
+    "@rsbuild/core": "npm:~2.2.12"
+    "@rslib/core": "npm:~1.0.3"
     "@types/node": "npm:^26.6.4"
     lit: "npm:~3.3.3"
     marked: "npm:~18.1.0"
-    marked-gfm-heading-id: "npm:^4.1.4"
+    marked-gfm-heading-id: "npm:~4.1.4"
     playwright: "npm:^1.64.0"
     simple-git-hooks: "npm:^2.14.0"
     typescript: "npm:^5.9.3"
   peerDependencies:
-    "@rsbuild/core": 1.x
-    lit: ~3.3.2
-    marked: ~17.0.1
+    "@rsbuild/core": ">=1 <2"
+    lit: ">=3 <4"
+    marked: ">=17 <19"
+    marked-gfm-heading-id: ">=4 <5"
   peerDependenciesMeta:
     "@rsbuild/core":
       optional: true
